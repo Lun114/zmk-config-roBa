@@ -1,4 +1,5 @@
 // OS設定を日本語キーボードのまま使うための変換定義
+
 #define JP_DQUOTE     AT                // "
 #define JP_AMPERSAND  CARET             // &
 #define JP_QUOTE      AMPERSAND         // '
@@ -22,7 +23,6 @@
 #define JP_KANA       LANGUAGE_1        // かな
 #define JP_EISU       LANGUAGE_2        // 英数
 #define JP_HANZEN     GRAVE             // 半角/全角
-
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -142,19 +142,19 @@
 
         NUM {
             bindings = <
-&kp MINUS        &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp JP_PLUS                                                      &kp JP_CARET      &kp JP_AMPERSAND   &kp JP_TILDE     &kp JP_LPAREN        &kp JP_RPAREN
-&kp SLASH        &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp JP_ASTERISK  &kp LC(LA(KP_NUMBER_0))      &kp JP_UNDERSCORE  &kp EXCLAMATION   &kp JP_AT          &kp HASH         &kp DOLLAR           &kp PERCENT
-&kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD       &kp JP_EQUAL                 &kp JP_DQUOTE      &kp JP_LBRACKET   &kp JP_RBRACKET    &kp JP_LBRACE    &kp JP_RBRACE        &kp BACKSLASH
-&kp LCTRL        &kp LSHFT        &trans           &trans           &trans           &trans                       &trans             &trans                                                                     &kp JP_PIPE
+&kp MINUS  &kp N7        &kp N8        &kp N9        &kp JP_PLUS                                                      &kp JP_CARET     &kp JP_AMPERSAND  &kp JP_TILDE   &kp JP_LPAREN  &kp JP_RPAREN
+&kp SLASH  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp JP_ASTERISK  &kp LC(LA(KP_NUMBER_0))      &kp JP_UNDERSCORE  &kp EXCLAMATION  &kp JP_AT         &kp HASH       &kp DOLLAR     &kp PERCENT
+&kp N0     &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PERIOD       &kp JP_EQUAL                 &kp JP_DQUOTE      &kp JP_LBRACKET  &kp JP_RBRACKET   &kp JP_LBRACE  &kp JP_RBRACE  &kp BACKSLASH
+&kp LCTRL  &kp LSHFT     &trans        &trans        &trans           &trans                       &trans             &trans                                                           &kp JP_PIPE
             >;
         };
 
         ARROW {
             bindings = <
-&kp ESCAPE      &kp LC(LS(TAB))         &kp UP_ARROW    &kp LC(TAB)              &trans                       &trans  &trans  &trans  &trans  &trans
-&kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&kp LEFT_SHIFT  &kp LG(LC(LEFT_ARROW))  &kp LG(TAB)     &kp LG(LC(RIGHT_ARROW))  &trans   &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans          &trans                  &trans          &trans                   &trans   &trans      &trans  &trans                          &trans
+&kp ESCAPE       &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp LC(KP_NUMBER_9)  &trans                       &trans  &trans  &trans  &trans  &trans
+&kp HOME         &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6      &kp END  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3      &trans   &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans           &trans           &trans           &trans               &trans   &trans      &trans  &trans                          &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
@@ -171,10 +171,10 @@
 
         SCROLL {
             bindings = <
-&kp LS(LC(TAB))  &kp HOME          &kp UP       &kp END                  &kp LC(TAB)                            &trans          &kp UP_ARROW     &trans  &trans  &trans
-&trans           &kp LEFT          &kp DOWN     &kp RIGHT                &trans            &trans      &trans   &kp LEFT_ARROW  &kp RIGHT_ARROW  &trans  &trans  &trans
-&kp LSHFT        &kp LG(LC(LEFT))  &kp LG(TAB)  &kp LG(LC(RIGHT))        &trans            &trans      &trans   &trans          &kp DOWN_ARROW   &trans  &trans  &trans
-&kp LCTRL        &trans            &trans       &kp JP_HANZEN            &kp INT_MUHENKAN  &trans      &kp DEL  &trans                                           &trans
+&kp LS(LC(TAB))  &kp HOME          &kp UP       &kp END            &kp LC(TAB)                            &trans          &kp UP_ARROW     &trans  &trans  &trans
+&trans           &kp LEFT          &kp DOWN     &kp RIGHT          &trans            &trans      &trans   &kp LEFT_ARROW  &kp RIGHT_ARROW  &trans  &trans  &trans
+&kp LSHFT        &kp LG(LC(LEFT))  &kp LG(TAB)  &kp LG(LC(RIGHT))  &trans            &trans      &trans   &trans          &kp DOWN_ARROW   &trans  &trans  &trans
+&kp LCTRL        &trans            &trans       &kp JP_HANZEN      &kp INT_MUHENKAN  &trans      &kp DEL  &trans                                           &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LS(LC(UP_ARROW)) LS(LC(DOWN_ARROW))>;
