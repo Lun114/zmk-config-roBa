@@ -155,10 +155,10 @@
 
         SCROLL {
             bindings = <
-&kp LS(LC(TAB))  &kp HOME          &kp UP       &kp END            &kp LC(TAB)                      &trans  &trans  &trans  &trans  &trans
-&kp LA(LS(TAB))  &kp LEFT          &kp DOWN     &kp RIGHT          &kp LA(TAB)  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&kp LSHFT        &kp LG(LC(LEFT))  &kp LG(TAB)  &kp LG(LC(RIGHT))  &trans       &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&kp LCTRL        &trans            &trans       &trans             &trans       &trans      &trans  &trans                          &trans
+&kp LS(LC(TAB))  &kp HOME          &kp UP       &kp END            &kp LC(TAB)                      &trans          &kp UP_ARROW     &trans  &trans  &trans
+&trans           &kp LEFT          &kp DOWN     &kp RIGHT          &trans       &trans      &trans  &kp LEFT_ARROW  &kp RIGHT_ARROW  &trans  &trans  &trans
+&kp LSHFT        &kp LG(LC(LEFT))  &kp LG(TAB)  &kp LG(LC(RIGHT))  &trans       &trans      &trans  &trans          &kp DOWN_ARROW   &trans  &trans  &trans
+&kp LCTRL        &trans            &trans       &trans             &trans       &trans      &trans  &trans                                           &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LS(LC(UP_ARROW)) LS(LC(DOWN_ARROW))>;
